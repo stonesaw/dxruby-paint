@@ -1,8 +1,10 @@
+# stantalone app version
+
 require 'dxruby'
 
-require_relative './lib/button'
-require_relative './lib/pen'
-require_relative './lib/pallete'
+require_relative './docs/lib/button'
+require_relative './docs/lib/pen'
+require_relative './docs/lib/pallete'
 
 
 canvas = Image.new(Window.width, Window.height, C_WHITE)

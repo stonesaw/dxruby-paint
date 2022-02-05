@@ -6,7 +6,7 @@ class Pallete
     @x = 0
     @y = Window.height - @height
     @bgcolor = [239, 239, 239]
-    @bg = RenderTarget.new(@width, @height, @bgcolor)
+    @bg = Image.new(@width, @height, @bgcolor)
     @col = 8
     @row = 2
     @padding = 8
@@ -37,13 +37,14 @@ class Pallete
 
   def draw(pen)
     # now color
-    @bg.draw_box_fill(10, @padding, 10 + @box_w, @height - @padding, pen.color1)
-       .draw_box(     10, @padding, 10 + @box_w, @height - @padding, [200, 200, 200])
-    @bg.draw_box_fill(18 + @box_w, @padding, 18 + 2 * @box_w, @height - @padding, pen.color2)
-       .draw_box(     18 + @box_w, @padding, 18 + 2 * @box_w, @height - @padding, [200, 200, 200])
+    @bg.box_fill(10, @padding, 10 + @box_w, @height - @padding, pen.color1)
+       .box(     10, @padding, 10 + @box_w, @height - @padding, [200, 200, 200])
+    @bg.box_fill(18 + @box_w, @padding, 18 + 2 * @box_w, @height - @padding, pen.color2)
+       .box(     18 + @box_w, @padding, 18 + 2 * @box_w, @height - @padding, [200, 200, 200])
     
     
     Window.draw(@x, @y, @bg)
+    @bg = Image.new(@width, @height, @bgcolor) # refresh bg
     @color_buttons.each {|cbtn| cbtn.draw() }
   end
 
