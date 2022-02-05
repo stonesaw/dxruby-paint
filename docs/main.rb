@@ -3,7 +3,7 @@ include DXOpal
 
 require_remote '/lib/button.rb'
 require_remote '/lib/pen.rb'
-require_remote '/lib/pallete.rb'
+require_remote '/lib/pallet.rb'
 
 Window.load_resources do
   Window.bgcolor = C_BLACK
@@ -12,17 +12,17 @@ Window.load_resources do
 
   pen = Pen.new(:circle, 20, C_BLUE)
   # TODO : Error: cant use RenderTarget
-  # pallete = Pallete.new
+  # pallet = Pallet.new
 
   Window.loop do
     pen.update
     # TODO
-    # pallete.update(pen)
+    # pallet.update(pen)
 
     pen.draw(canvas)
     Window.draw(0, 0, canvas)
     # TODO
-    # pallete.draw(pen)
+    # pallet.draw(pen)
 
     Window.draw_font(0, 0, "fps: #{Window.real_fps}", Font.default, color: [30, 30, 30])
   end

@@ -1,5 +1,5 @@
-# color pallete
-class Pallete
+# color pallet
+class Pallet
   def initialize(height = 100)
     @width = Window.width
     @height = height
