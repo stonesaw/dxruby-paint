@@ -40,6 +40,6 @@ class Button < Sprite
   end
 
   def click?(mouse_button = M_LBUTTON)
-    hover? && Input.mouse_down?(mouse_button)
+    hover? && Input.mouse_push?(mouse_button)
   end
 end
